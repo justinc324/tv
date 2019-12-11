@@ -3,6 +3,8 @@ import numpy as np
 import pygame as pg
 from pathlib import Path
 import keyboard
+from omxplayer.player import OMXPlayer
+
 
 # global variables
 DELAY = 2
