@@ -42,13 +42,13 @@ audio = (dwight_fire_drill, kendall_succession)
 # video_fire_drill = cv2.VideoCapture('video/fire_drill.mp4')
 # video_kendall_succession = cv2.VideoCapture('video/kendall_succession.mp4')
 video_agni_kai = OMXPlayer(Path('video/agnikai.mp4'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer1')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer1', args='--loop')
 video_agni_kai.pause()
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer2')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer2', args='--loop')
 video_fire_drill.pause()
 video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer3')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
 video_kendall_succession.pause()
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
@@ -79,7 +79,7 @@ while True:
     # play music
     if keyboard.is_pressed('z'):
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
-        channel0.play(music[MUSIC_ITER])
+        mixer.channel0.play(music[MUSIC_ITER])
 
     # play an alternate audio file. Mutes the current audio.
     if keyboard.is_pressed('w'):
