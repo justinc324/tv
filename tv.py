@@ -58,7 +58,7 @@ video_kendall_succession.pause()
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
 curr_player = video_agni_kai
-curr_player.play()
+#curr_player.play()
 
 # current audio
 muted = False
