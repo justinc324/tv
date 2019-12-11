@@ -40,20 +40,22 @@ audio = (dwight_fire_drill, kendall_succession)
 # video_kendall_succession = cv2.VideoCapture('video/kendall_succession.mp4')
 video_agni_kai = OMXPlayer(Path('video/agnikai.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer1')
+video_agni_kai.pause()
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer2')
+video_fire_drill.pause()
 video_kendall_succession = Path('video/kendall_succession.mp4')
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 # delays = (2, 1, 1)
 
-curr_player = video_agni_kai
-
+curr_player = video_agni_kai.play()
 while True:
 
     if keyboard.is_pressed('a'):
         curr_player.pause()
         curr_player = video_fire_drill
+        curr_player.play()
 
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
