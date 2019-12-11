@@ -4,7 +4,7 @@ import pygame as pg
 import keyboard # will be removed with button
 
 # global variables
-DELAY = 8
+DELAY = 2
 VID_COUNT = 3
 MUSIC_COUNT = 3
 VID_ITER = 0
@@ -37,7 +37,7 @@ video_fire_drill = cv2.VideoCapture('video/fire_drill.mp4')
 video_kendall_succession = cv2.VideoCapture('video/kendall_succession.mp4')
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
-delays = (6, 1, 2)
+delays = (2, 1, 1)
 
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
