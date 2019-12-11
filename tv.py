@@ -54,6 +54,10 @@ curr_player.play()
 while True:
 
     if keyboard.is_pressed('a'):
+
+        curr_player.mute()
+        channel0.play(succession_theme, -1)
+
         curr_player.pause()
         curr_player = video_fire_drill
         curr_player.play()
