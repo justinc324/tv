@@ -37,7 +37,7 @@ video_fire_drill = cv2.VideoCapture('video/fire_drill.mp4')
 video_kendall_succession = cv2.VideoCapture('video/kendall_succession.mp4')
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
-delays = (6, 5, 3)
+delays = (6, 1, 2)
 
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
@@ -64,18 +64,17 @@ while(cap.isOpened()):
         cv2.imshow(window_name,frame)
 
         # Press Q on keyboard to  exit
-        cv2.waitKey(DELAY)
 
-        if cv2.waitKey(2) & 0xFF == ord('q'):
+        if cv2.waitKey(DELAY) & 0xFF == ord('q'):
             break
-        elif cv2.waitKey(2) & 0xFF == ord('a'):
+        elif cv2.waitKey(DELAY) & 0xFF == ord('a'):
             VID_ITER = (VID_ITER + 1) % VID_COUNT
             cap = videos[VID_ITER]
             DELAY = delays[VID_ITER]
-        elif cv2.waitKey(2) & 0xFF == ord('z'):
+        elif cv2.waitKey(DELAY) & 0xFF == ord('z'):
             MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
             channel0.play(music[MUSIC_ITER], -1)
-        elif cv2.waitKey(2) & 0xFF == ord('w'):
+        elif cv2.waitKey(DELAY) & 0xFF == ord('w'):
             pass
 
         # if cv2.waitKey(DELAY) & 0xFF == ord('q'):
