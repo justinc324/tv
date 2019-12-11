@@ -5,6 +5,10 @@ from pathlib import Path
 import keyboard
 from omxplayer.player import OMXPlayer
 
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(3, GPIO.IN)
 
 # global variables
 DELAY = 2
@@ -59,6 +63,9 @@ curr_player.play()
 # current audio
 muted = False
 
+# switch
+switch = GPIO.input(3)
+
 while True:
 
     if keyboard.is_pressed('a'):
@@ -77,9 +84,12 @@ while True:
             muted = True
 
     # play music
-    if keyboard.is_pressed('z'):
+    #if keyboard.is_pressed('z'):
+    if GPIO.input(3) not switch
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         mixer.channel0.play(music[MUSIC_ITER])
+        switch = not(switch)
+
 
     # play an alternate audio file. Mutes the current audio.
     if keyboard.is_pressed('w'):
