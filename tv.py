@@ -44,22 +44,20 @@ video_agni_kai.pause()
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer2')
 video_fire_drill.pause()
-video_kendall_succession = Path('video/kendall_succession.mp4')
+video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
+        dbus_name='org.mpris.MediaPlayer2.omxplayer3')
+video_kendall_succession.pause()
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
-# delays = (2, 1, 1)
 
 curr_player = video_agni_kai
 curr_player.play()
 while True:
 
     if keyboard.is_pressed('a'):
-
-        curr_player.mute()
-        channel0.play(succession_theme, -1)
-
         curr_player.pause()
-        curr_player = video_fire_drill
+        VID_ITER = (VID_ITER + 1) % VID_COUNT
+        curr_player = videos[VID_ITER]
         curr_player.play()
 
 # Create a VideoCapture object and read from input file
