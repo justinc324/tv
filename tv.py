@@ -49,7 +49,8 @@ video_kendall_succession = Path('video/kendall_succession.mp4')
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 # delays = (2, 1, 1)
 
-curr_player = video_agni_kai.play()
+curr_player = video_agni_kai
+curr_player.play()
 while True:
 
     if keyboard.is_pressed('a'):
