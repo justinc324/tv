@@ -10,8 +10,10 @@ from omxplayer.player import OMXPlayer
 DELAY = 2
 VID_COUNT = 3
 MUSIC_COUNT = 3
+AUDIO_COUNT = 2
 VID_ITER = 0
 MUSIC_ITER = 0
+AUDIO_ITER = 0
 
 # intialize
 pg.mixer.init()
@@ -20,6 +22,7 @@ pg.mixer.set_num_channels(12)
 
 mixer = pg.mixer
 channel0 = mixer.Channel(0)
+channel1 = mixer.Channel(1)
 
 # music to play
 office_theme = mixer.Sound("music/office_theme_song.wav")
@@ -52,6 +55,10 @@ videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
 curr_player = video_agni_kai
 curr_player.play()
+
+# current audio
+muted = False
+
 while True:
 
     if keyboard.is_pressed('a'):
@@ -59,6 +66,28 @@ while True:
         VID_ITER = (VID_ITER + 1) % VID_COUNT
         curr_player = videos[VID_ITER]
         curr_player.play()
+
+    # mute/unmute audio from original clip
+    if keyboard.is_pressed('m'):
+        if muted:
+            curr_player.unmute()
+            muted = False
+        else:
+            curr_player.mute()
+            muted = True
+
+    # play music
+    if keyboard.is_pressed('z'):
+        MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
+        channel0.play(music[MUSIC_ITER])
+
+    # play an alternate audio file. Mutes the current audio.
+    if keyboard.is_pressed('w'):
+        AUDIO_ITER = (AUDIO_ITER + 1) % AUDIO_COUNT
+        curr_player.mute()
+        muted = True
+        channel1.play(audio[AUDIO_ITER])
+
 
 # Create a VideoCapture object and read from input file
 # If the input is the camera, pass 0 instead of the video file name
