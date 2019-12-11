@@ -63,10 +63,9 @@ curr_player.play()
 # current audio
 muted = False
 
-# switch
-switch = GPIO.input(3)
-
 while True:
+
+switch = GPIO.input(3)
 
     if keyboard.is_pressed('a'):
         curr_player.pause()
@@ -86,6 +85,7 @@ while True:
     # play music
     #if keyboard.is_pressed('z'):
     if GPIO.input(3) is not switch:
+        print "wow"
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         mixer.channel0.play(music[MUSIC_ITER])
         switch = not(switch)
