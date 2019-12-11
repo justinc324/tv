@@ -51,7 +51,7 @@ curr_player = video_agni_kai
 
 while True:
 
-    if keyboard.isPressed('a'):
+    if keyboard.is_pressed('a'):
         curr_player.pause()
         curr_player = video_fire_drill
 
