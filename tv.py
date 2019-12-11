@@ -65,7 +65,7 @@ muted = False
 
 while True:
 
-switch = GPIO.input(3)
+    switch = GPIO.input(3)
 
     if keyboard.is_pressed('a'):
         curr_player.pause()
