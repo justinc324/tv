@@ -116,10 +116,6 @@ music_muted = False
 
 while True:
 
-    command, addr = sock.recvfrom(1024)
-
-	command = command.decode('utf-8')
-
     switch = GPIO.input(3)
 
     music_mute_btn = GPIO.input(MUSIC_MUTE_BTN)
