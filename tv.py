@@ -85,9 +85,9 @@ while True:
     # play music
     if keyboard.is_pressed('z'):
     # if GPIO.input(3) is not switch:
-        print("wow")
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
-        music[MUSIC_ITER].play(-1)
+        channel0.play(music[MUSIC_ITER], -1)
+        print("wow")
         switch = not(switch)
 
 
