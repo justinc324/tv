@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import pygame as pg
 from pathlib import Path
-import keyboard
+import socket
 from omxplayer.player import OMXPlayer
 
 import RPi.GPIO as GPIO
@@ -18,6 +18,13 @@ AUDIO_COUNT = 2
 VID_ITER = 0
 MUSIC_ITER = 0
 AUDIO_ITER = 0
+
+# wireless setup
+UDP_IP = "192.168.1.2"
+UDP_PORT = 57222
+
+sock = socket.socket(socket.AN_INET,socket.SOCK_DGRAM)
+sock.bind((UDP_IP. UDP_PORT))
 
 # intialize
 # pg.mixer.init()
