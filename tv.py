@@ -58,15 +58,15 @@ video_kendall_succession.pause()
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
 
-music_agni_kai = OMXPlayer(Path('music/agnikai.wav'),
+office_theme = OMXPlayer(Path('music/office_theme_song.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
-music_agni_kai.pause()
-music_fire_drill = OMXPlayer(Path('music/fire_drill.wav'),
+office_theme.pause()
+agnikai = OMXPlayer(Path('music/last_agni_kai.wav.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
-music_fire_drill.pause()
-music_kendall_succession = OMXPlayer(Path('music/kendall_succession.wav'),
+agnikai.pause()
+succession_theme = OMXPlayer(Path('music/succession_theme.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
-music_kendall_succession.pause()
+succession_theme.pause()
 
 curr_player = video_agni_kai
 curr_player.play()
