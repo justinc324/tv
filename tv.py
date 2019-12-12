@@ -57,6 +57,7 @@ video_kendall_succession.pause()
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
+channel0.play(office_theme, -1)
 curr_player = video_agni_kai
 curr_player.play()
 
