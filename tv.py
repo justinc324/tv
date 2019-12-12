@@ -142,13 +142,13 @@ while True:
         # wait(1)
 
     # mute music
-    if keyboard.is_pressed('n'):
-        if music_muted:
-            curr_music.unmute()
-            music_muted = False
-        else:
-            curr_music.mute()
-            music_muted = True
+    # if keyboard.is_pressed('n'):
+    #     if music_muted:
+    #         curr_music.unmute()
+    #         music_muted = False
+    #     else:
+    #         curr_music.mute()
+    #         music_muted = True
 
     # play music
     #if keyboard.is_pressed('z'):
