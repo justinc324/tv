@@ -4,6 +4,7 @@ import pygame as pg
 from pathlib import Path
 import socket
 import time
+import keyboard
 from omxplayer.player import OMXPlayer
 
 import RPi.GPIO as GPIO
@@ -12,7 +13,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(3, GPIO.IN)
 
 MUSIC_MUTE_BTN = 4
-AUDIO_MUTE_BTN = 27
+AUDIO_MUTE_BTN = 24
 
 # buttons
 GPIO.setup(MUSIC_MUTE_BTN, GPIO.IN)
@@ -122,33 +123,37 @@ while True:
     music_mute_btn = GPIO.input(MUSIC_MUTE_BTN)
     audio_mute_btn = GPIO.input(AUDIO_MUTE_BTN)
 
-    # if keyboard.is_pressed('a'):
-    if not music_mute_btn:
+    if keyboard.is_pressed('a'):
+    # if not music_mute_btn:
         curr_player.pause()
         VID_ITER = (VID_ITER + 1) % VID_COUNT
         curr_player = videos[VID_ITER]
         curr_player.play()
-        time.sleep(.2)
+        time.sleep(.5)
 
     # mute/unmute audio from original clip
     # if keyboard.is_pressed('m'):
-    #     if audio_muted:
-    #         curr_player.unmute()
-    #         audio_muted = False
-    #     else:
-    #         curr_player.mute()
-    #         audio_muted = True
+    if not audio_mute_btn:
+        if audio_muted:
+            curr_player.unmute()
+            audio_muted = False
+        else:
+            curr_player.mute()
+            audio_muted = True
         # print("audio muted")
         # wait(1)
+        time.sleep(.5)
 
     # mute music
     # if keyboard.is_pressed('n'):
-    #     if music_muted:
-    #         curr_music.unmute()
-    #         music_muted = False
-    #     else:
-    #         curr_music.mute()
-    #         music_muted = True
+    if not music_mute_btn
+        if music_muted:
+            curr_music.unmute()
+            music_muted = False
+        else:
+            curr_music.mute()
+            music_muted = True
+        time.sleep(.5)
 
     # play music
     #if keyboard.is_pressed('z'):
