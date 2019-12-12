@@ -72,7 +72,7 @@ thrones_theme = OMXPlayer(Path('music/thrones_theme.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
 thrones_theme.pause()
 
-music = (office_theme, agni_kai, succession_theme, fun_song, thrones_theme)
+music = (office_theme, succession_theme, fun_song, thrones_theme)
 
 
 # audio files
@@ -109,7 +109,7 @@ video_thrones = OMXPlayer(Path('video/thrones.mp4'),
 video_thrones.pause()
 video_agni_kai.set_volume(7)
 
-videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
+videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thrones)
 
 
 
