@@ -58,7 +58,7 @@ dwight_fire_drill = OMXPlayer(Path('audio/dwight_fire_drill.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
 dwight_fire_drill.pause()
 kendall_succession = OMXPlayer(Path('audio/kendall_succession.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer69', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer9', args='--loop')
 kendall_succession.pause()
 
 
