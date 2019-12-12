@@ -57,19 +57,19 @@ AUDIO_ITER = 0
 
 # music to play
 office_theme = OMXPlayer(Path('music/office_theme_song.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
 office_theme.pause()
 # agni_kai = OMXPlayer(Path('music/last_agni_kai.wav'),
 #         dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
 # agni_kai.pause()
 succession_theme = OMXPlayer(Path('music/succession_theme.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
 succession_theme.pause()
 fun_song = OMXPlayer(Path('music/fun_song.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
 fun_song.pause()
 thrones_theme = OMXPlayer(Path('music/thrones_theme.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
 thrones_theme.pause()
 
 music = (office_theme, succession_theme, fun_song, thrones_theme)
@@ -101,11 +101,11 @@ video_agni_kai.pause()
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer2', args='--loop')
 video_fire_drill.pause()
-video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
-video_kendall_succession.pause()
+# video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
+#         dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
+# video_kendall_succession.pause()
 video_thrones = OMXPlayer(Path('video/thrones.mp4'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
 video_agni_kai.set_volume(7)
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thrones)
