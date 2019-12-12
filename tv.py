@@ -112,8 +112,8 @@ while True:
             muted = True
 
     # play music
-    if keyboard.is_pressed('z'):
-        if GPIO.input(3) is not switch:
+    #if keyboard.is_pressed('z'):
+    if GPIO.input(3) is not switch:
         music[MUSIC_ITER].pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         music[MUSIC_ITER].play()
