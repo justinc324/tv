@@ -52,8 +52,8 @@ music = (office_theme, agni_kai, succession_theme, fun_song)
 
 # audio files
 
-dwight_fire_drill = mixer.Sound("audio/dwight_fire_drill.wav")
-kendall_succession = mixer.Sound("audio/kendall_succession.wav")
+# dwight_fire_drill = mixer.Sound("audio/dwight_fire_drill.wav")
+# kendall_succession = mixer.Sound("audio/kendall_succession.wav")
 
 audio = (dwight_fire_drill, kendall_succession)
 
