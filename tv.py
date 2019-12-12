@@ -101,10 +101,10 @@ video_agni_kai.pause()
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer2', args='--loop')
 video_fire_drill.pause()
-video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
+video_thrones = OMXPlayer(Path('video/video_thrones.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
-video_kendall_succession.pause()
-video_agni_kai.set_volume(7)
+video_thrones.pause()
+video_agni_kai.set_volume(6)
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
