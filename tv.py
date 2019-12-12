@@ -3,6 +3,7 @@ import numpy as np
 import pygame as pg
 from pathlib import Path
 import socket
+import keyboard
 from omxplayer.player import OMXPlayer
 
 import RPi.GPIO as GPIO
