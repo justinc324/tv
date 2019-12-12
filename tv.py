@@ -10,10 +10,10 @@ from omxplayer.player import OMXPlayer
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
-MUSIC_MUTE_BTN = 27
+MUSIC_MUTE_BTN = 17
 AUDIO_MUTE_BTN = 6
 VIDEO_SWITCH_BTN = 26
-MUSIC_SWITCH_BTN = 17
+MUSIC_SWITCH_BTN = 25
 
 # buttons
 GPIO.setup(MUSIC_MUTE_BTN, GPIO.IN)
