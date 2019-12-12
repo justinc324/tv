@@ -21,7 +21,6 @@ AUDIO_ITER = 0
 
 # intialize
 pg.mixer.init()
-pg.init()
 pg.mixer.set_num_channels(12)
 
 mixer = pg.mixer
@@ -83,11 +82,11 @@ while True:
             muted = True
 
     # play music
-    #if keyboard.is_pressed('z'):
-    if GPIO.input(3) is not switch:
+    if keyboard.is_pressed('z'):
+    # if GPIO.input(3) is not switch:
         print("wow")
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
-        mixer.Channel(0).play(music[MUSIC_ITER])
+        music[MUSIC_ITER].play(-1)
         switch = not(switch)
 
 
