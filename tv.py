@@ -21,6 +21,7 @@ AUDIO_ITER = 0
 
 # intialize
 pg.mixer.init()
+pg.init()
 pg.mixer.set_num_channels(12)
 
 mixer = pg.mixer
