@@ -29,11 +29,11 @@ channel0 = mixer.Channel(0)
 channel1 = mixer.Channel(1)
 
 # music to play
-office_theme = mixer.Sound("music/office_theme_song.wav")
-agni_kai = mixer.Sound("music/last_agni_kai.wav")
-succession_theme = mixer.Sound("music/succession_theme.wav")
+# office_theme = mixer.Sound("music/office_theme_song.wav")
+# agni_kai = mixer.Sound("music/last_agni_kai.wav")
+# succession_theme = mixer.Sound("music/succession_theme.wav")
 
-music = (office_theme, agni_kai, succession_theme)
+
 
 # audio files
 dwight_fire_drill = mixer.Sound("audio/dwight_fire_drill.wav")
@@ -67,6 +67,8 @@ agnikai.pause()
 succession_theme = OMXPlayer(Path('music/succession_theme.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
 succession_theme.pause()
+
+music = (office_theme, agni_kai, succession_theme)
 
 curr_player = video_agni_kai
 curr_player.play()
