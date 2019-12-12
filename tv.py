@@ -10,6 +10,13 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(3, GPIO.IN)
 
+MUSIC_MUTE_BTN = 4
+AUDIO_MUTE_BTN = 27
+
+# buttons
+GPIO.setup(MUSIC_MUTE_BTN, GPIO.IN)
+GPIO.setup(AUDIO_MUTE_BTN, GPIO.IN)
+
 # global variables
 DELAY = 2
 VID_COUNT = 3
@@ -25,6 +32,8 @@ UDP_PORT = 57222
 
 sock = socket.socket(socket.AN_INET,socket.SOCK_DGRAM)
 sock.bind((UDP_IP. UDP_PORT))
+
+
 
 # intialize
 # pg.mixer.init()
@@ -107,7 +116,14 @@ music_muted = False
 
 while True:
 
+    command, addr = sock.recvfrom(1024)
+
+	command = command.decode('utf-8')
+
     switch = GPIO.input(3)
+
+    music_mute_btn = GPIO.input(MUSIC_MUTE_BTN)
+    audio_mute_btn = GPIO.input(AUDIO_MUTE_BTN)
 
     if keyboard.is_pressed('a'):
         curr_player.pause()
@@ -116,13 +132,15 @@ while True:
         curr_player.play()
 
     # mute/unmute audio from original clip
-    if keyboard.is_pressed('m'):
+    # if keyboard.is_pressed('m'):
+    if not music_mute_btn
         if audio_muted:
             curr_player.unmute()
             audio_muted = False
         else:
             curr_player.mute()
             audio_muted = True
+        wait(1)
 
     # mute music
     if keyboard.is_pressed('n'):
