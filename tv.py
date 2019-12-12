@@ -57,9 +57,19 @@ video_kendall_succession.pause()
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
-channel0.play(office_theme, -1)
-# curr_player = video_agni_kai
-# curr_player.play()
+
+music_agni_kai = OMXPlayer(Path('music/agnikai.wav'),
+        dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
+music_agni_kai.pause()
+music_fire_drill = OMXPlayer(Path('music/fire_drill.wav'),
+        dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
+music_fire_drill.pause()
+music_kendall_succession = OMXPlayer(Path('music/kendall_succession.wav'),
+        dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
+music_kendall_succession.pause()
+
+curr_player = video_agni_kai
+curr_player.play()
 
 # current audio
 muted = False
@@ -86,7 +96,7 @@ while True:
     # play music
     if keyboard.is_pressed('z'):
     # if GPIO.input(3) is not switch:
-        music[MUSIC_ITER].stop()
+        music[MUSIC_ITER].pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         music[MUSIC_ITER].play()
         channel0.play(music[MUSIC_ITER], -1)
