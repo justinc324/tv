@@ -4,7 +4,6 @@ import pygame as pg
 from pathlib import Path
 import socket
 import time
-import keyboard
 from omxplayer.player import OMXPlayer
 
 import RPi.GPIO as GPIO
@@ -132,13 +131,13 @@ while True:
         time.sleep(.2)
 
     # mute/unmute audio from original clip
-    if keyboard.is_pressed('m'):
-        if audio_muted:
-            curr_player.unmute()
-            audio_muted = False
-        else:
-            curr_player.mute()
-            audio_muted = True
+    # if keyboard.is_pressed('m'):
+    #     if audio_muted:
+    #         curr_player.unmute()
+    #         audio_muted = False
+    #     else:
+    #         curr_player.mute()
+    #         audio_muted = True
         # print("audio muted")
         # wait(1)
 
