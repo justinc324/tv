@@ -119,7 +119,7 @@ curr_music = office_theme
 audio_muted = False
 music_muted = False
 
-while True
+while True:
 
     vibration, addr = sock.recvfrom(1024)
 
