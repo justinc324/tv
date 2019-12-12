@@ -13,7 +13,7 @@ GPIO.setup(3, GPIO.IN)
 # global variables
 DELAY = 2
 VID_COUNT = 3
-MUSIC_COUNT = 4
+MUSIC_COUNT = 5
 AUDIO_COUNT = 2
 VID_ITER = 0
 MUSIC_ITER = 0
@@ -46,6 +46,9 @@ succession_theme.pause()
 fun_song = OMXPlayer(Path('music/fun_song.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
 fun_song.pause()
+thrones_theme = OMXPlayer(Path('music/thrones_theme.wav'),
+        dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
+thrones_theme.pause()
 
 music = (office_theme, agni_kai, succession_theme, fun_song)
 
@@ -90,7 +93,8 @@ curr_player = video_agni_kai
 curr_player.play()
 
 # current audio
-muted = False
+audio_muted = False
+music_muted = False
 
 while True:
 
@@ -104,12 +108,21 @@ while True:
 
     # mute/unmute audio from original clip
     if keyboard.is_pressed('m'):
-        if muted:
+        if audio_muted:
             curr_player.unmute()
-            muted = False
+            audio_muted = False
         else:
             curr_player.mute()
-            muted = True
+            audio_muted = True
+
+    # mute music
+    if keyboard.is_pressed('M'):
+        if music_muted:
+            curr_player.unmute()
+            music_muted = False
+        else:
+            curr_player.mute()
+            music_muted = True
 
     # play music
     #if keyboard.is_pressed('z'):
