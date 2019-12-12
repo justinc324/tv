@@ -114,6 +114,7 @@ videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thro
 
 
 curr_player = video_thrones
+curr_player.play()
 
 curr_music = office_theme
 
