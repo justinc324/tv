@@ -59,17 +59,17 @@ AUDIO_ITER = 0
 office_theme = OMXPlayer(Path('music/office_theme_song.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
 office_theme.pause()
-agni_kai = OMXPlayer(Path('music/last_agni_kai.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
-agni_kai.pause()
+# agni_kai = OMXPlayer(Path('music/last_agni_kai.wav'),
+#         dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
+# agni_kai.pause()
 succession_theme = OMXPlayer(Path('music/succession_theme.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer6', args='--loop')
 succession_theme.pause()
 fun_song = OMXPlayer(Path('music/fun_song.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
 fun_song.pause()
 thrones_theme = OMXPlayer(Path('music/thrones_theme.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer9', args='--loop')
+        dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
 thrones_theme.pause()
 
 music = (office_theme, agni_kai, succession_theme, fun_song, thrones_theme)
