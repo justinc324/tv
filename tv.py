@@ -106,7 +106,6 @@ video_kendall_succession = OMXPlayer(Path('video/kendall_succession.mp4'),
 video_kendall_succession.pause()
 video_thrones = OMXPlayer(Path('video/thrones.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
-video_thrones.pause()
 video_agni_kai.set_volume(7)
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thrones)
@@ -114,8 +113,7 @@ videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thro
 
 
 
-curr_player = video_agni_kai
-curr_player.play()
+curr_player = video_thrones
 
 curr_music = office_theme
 
