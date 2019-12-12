@@ -50,7 +50,7 @@ thrones_theme = OMXPlayer(Path('music/thrones_theme.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
 thrones_theme.pause()
 
-music = (office_theme, agni_kai, succession_theme, fun_song)
+music = (office_theme, agni_kai, succession_theme, fun_song, thrones_theme)
 
 
 # audio files
