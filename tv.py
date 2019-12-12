@@ -108,7 +108,7 @@ video_thrones = OMXPlayer(Path('video/thrones.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer3', args='--loop')
 video_agni_kai.set_volume(7)
 
-videos = (video_agni_kai, video_fire_drill, video_kendall_succession, video_thrones)
+videos = (video_agni_kai, video_fire_drill, video_thrones)
 
 
 
