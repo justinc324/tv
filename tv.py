@@ -32,12 +32,13 @@ VID_ITER = 0
 MUSIC_ITER = 0
 AUDIO_ITER = 0
 
-# # wireless setup
-# UDP_IP = "192.168.1.2"
-# UDP_PORT = 57222
-#
-# sock = socket.socket(socket.AN_INET,socket.SOCK_DGRAM)
-# sock.bind((UDP_IP. UDP_PORT))
+# wireless setup
+UDP_IP = "192.168.1.2"
+UDP_PORT = 57222
+
+sock = socket.socket(socket.AF_INET, # Internet
+                    socket.SOCK_DGRAM) # UDP
+sock.bind((UDP_IP, UDP_PORT))
 
 
 
@@ -118,9 +119,19 @@ curr_music = office_theme
 audio_muted = False
 music_muted = False
 
-while True:
+while True
 
-    switch = GPIO.input(3)
+    vibration, addr = sock.recvfrom(1024)
+
+	vibration = vibration.decode('utf-8')
+
+    if vibration == "1":
+        curr_player.unmute()
+        curr_music.mute()
+        curr_player.seek(0)
+        audio_muted = False
+        music_muted = True
+        continue
 
     music_mute_btn = GPIO.input(MUSIC_MUTE_BTN)
     audio_mute_btn = GPIO.input(AUDIO_MUTE_BTN)
