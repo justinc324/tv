@@ -54,15 +54,15 @@ music = (office_theme, agni_kai, succession_theme, fun_song)
 
 # dwight_fire_drill = mixer.Sound("audio/dwight_fire_drill.wav")
 # kendall_succession = mixer.Sound("audio/kendall_succession.wav")
-dwight_fire_drill = OMXPlayer(Path('audio/dwight_fire_drill.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
-dwight_fire_drill.pause()
-kendall_succession = OMXPlayer(Path('audio/kendall_succession.wav'),
-        dbus_name='org.mpris.MediaPlayer2.omxplayer9', args='--loop')
-kendall_succession.pause()
+# dwight_fire_drill = OMXPlayer(Path('audio/dwight_fire_drill.wav'),
+#         dbus_name='org.mpris.MediaPlayer2.omxplayer8', args='--loop')
+# dwight_fire_drill.pause()
+# kendall_succession = OMXPlayer(Path('audio/kendall_succession.wav'),
+#         dbus_name='org.mpris.MediaPlayer2.omxplayer9', args='--loop')
+# kendall_succession.pause()
 
 
-audio = (dwight_fire_drill, kendall_succession)
+# audio = (dwight_fire_drill, kendall_succession)
 
 # visuals
 # video_agni_kai = cv2.VideoCapture('video/agnikai.mp4')
@@ -121,10 +121,10 @@ while True:
 
 
     # play an alternate audio file. Mutes the current audio.
-    if keyboard.is_pressed('w'):
-        AUDIO_ITER = (AUDIO_ITER + 1) % AUDIO_COUNT
-        curr_player.mute()
-        muted = True
+    # if keyboard.is_pressed('w'):
+    #     AUDIO_ITER = (AUDIO_ITER + 1) % AUDIO_COUNT
+    #     curr_player.mute()
+    #     muted = True
         # mixer.Channel(1).play(audio[AUDIO_ITER])
 
 
