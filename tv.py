@@ -3,6 +3,7 @@ import numpy as np
 import pygame as pg
 from pathlib import Path
 import socket
+import time
 import keyboard
 from omxplayer.player import OMXPlayer
 
@@ -128,7 +129,7 @@ while True:
         VID_ITER = (VID_ITER + 1) % VID_COUNT
         curr_player = videos[VID_ITER]
         curr_player.play()
-        wait(1)
+        time.sleep(.2)
 
     # mute/unmute audio from original clip
     if keyboard.is_pressed('m'):
