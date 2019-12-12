@@ -57,7 +57,7 @@ video_kendall_succession.pause()
 
 videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 
-channel0.play(office_theme, -1)
+music[MUSIC_ITER].play()
 curr_player = video_agni_kai
 curr_player.play()
 
@@ -86,7 +86,9 @@ while True:
     # play music
     if keyboard.is_pressed('z'):
     # if GPIO.input(3) is not switch:
+        music[MUSIC_ITER].pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
+        music[MUSIC_ITER].play()
         channel0.play(music[MUSIC_ITER], -1)
         print("wow")
         switch = not(switch)
