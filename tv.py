@@ -14,10 +14,14 @@ GPIO.setup(3, GPIO.IN)
 
 MUSIC_MUTE_BTN = 4
 AUDIO_MUTE_BTN = 24
+VIDEO_SWITCH_BTN = 26
+MUSIC_SWITCH_BTN = 16
 
 # buttons
 GPIO.setup(MUSIC_MUTE_BTN, GPIO.IN)
 GPIO.setup(AUDIO_MUTE_BTN, GPIO.IN)
+GPIO.setup(VIDEO_SWITCH_BTN, GPIO.IN)
+GPIO.setup(MUSIC_SWITCH_BTN, GPIO.IN)
 
 # global variables
 DELAY = 2
@@ -122,9 +126,11 @@ while True:
 
     music_mute_btn = GPIO.input(MUSIC_MUTE_BTN)
     audio_mute_btn = GPIO.input(AUDIO_MUTE_BTN)
+    video_switch_btn = GPIO.input(VIDEO_SWITCH_BTN)
+    music_switch_btn = GPIO.input(MUSIC_SWITCH_BTN)
 
-    if keyboard.is_pressed('a'):
-    # if not music_mute_btn:
+    # if keyboard.is_pressed('a'):
+    if not video_switch_btn:
         curr_player.pause()
         VID_ITER = (VID_ITER + 1) % VID_COUNT
         curr_player = videos[VID_ITER]
@@ -157,13 +163,15 @@ while True:
 
     # play music
     #if keyboard.is_pressed('z'):
-    if GPIO.input(3) is not switch:
+    # if GPIO.input(3) is not switch:
+    if not music_switch_btn:
+
         curr_music.pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         curr_music = music[MUSIC_ITER]
         curr_music.play()
         # channel0.play(music[MUSIC_ITER], -1)
-        switch = not(switch)
+        # switch = not(switch)
 
 
     # play an alternate audio file. Mutes the current audio.
