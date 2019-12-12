@@ -120,11 +120,9 @@ audio_muted = False
 music_muted = False
 
 while True:
-
     vibration, addr = sock.recvfrom(1024)
-
-	vibration = vibration.decode('utf-8')
-
+    vibration = vibration.decode('utf-8')
+    
     if vibration == "1":
         curr_player.unmute()
         curr_music.mute()
