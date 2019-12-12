@@ -129,9 +129,10 @@ while True:
     # play music
     #if keyboard.is_pressed('z'):
     if GPIO.input(3) is not switch:
-        music[MUSIC_ITER].pause()
+        curr_music.pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
-        music[MUSIC_ITER].play()
+        curr_music = music[MUSIC_ITER]
+        curr_music.play()
         # channel0.play(music[MUSIC_ITER], -1)
         switch = not(switch)
 
