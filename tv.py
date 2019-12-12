@@ -146,7 +146,7 @@ while True:
 
     # mute music
     # if keyboard.is_pressed('n'):
-    if not music_mute_btn
+    if not music_mute_btn:
         if music_muted:
             curr_music.unmute()
             music_muted = False
