@@ -87,7 +87,6 @@ while True:
     if keyboard.is_pressed('z'):
     # if GPIO.input(3) is not switch:
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
-        import pdb; pdb.set_trace()
         channel0.play(music[MUSIC_ITER], -1)
         print("wow")
         switch = not(switch)
