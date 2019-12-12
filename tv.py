@@ -37,6 +37,7 @@ AUDIO_ITER = 0
 office_theme = OMXPlayer(Path('music/office_theme_song.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer4', args='--loop')
 office_theme.pause()
+office_theme.set_volume(4)
 agni_kai = OMXPlayer(Path('music/last_agni_kai.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer5', args='--loop')
 agni_kai.pause()
@@ -46,6 +47,7 @@ succession_theme.pause()
 fun_song = OMXPlayer(Path('music/fun_song.wav'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer7', args='--loop')
 fun_song.pause()
+office_theme.set_volume(5)
 
 music = (office_theme, agni_kai, succession_theme, fun_song)
 
@@ -73,7 +75,7 @@ music = (office_theme, agni_kai, succession_theme, fun_song)
 video_agni_kai = OMXPlayer(Path('video/agnikai.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer1', args='--loop')
 video_agni_kai.pause()
-video_agni_kai.set_volume(6)
+video_agni_kai.set_volume(4)
 video_fire_drill = OMXPlayer(Path('video/fire_drill.mp4'),
         dbus_name='org.mpris.MediaPlayer2.omxplayer2', args='--loop')
 video_fire_drill.pause()
