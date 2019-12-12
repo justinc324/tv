@@ -10,12 +10,10 @@ from omxplayer.player import OMXPlayer
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(3, GPIO.IN)
-
-MUSIC_MUTE_BTN = 17
-AUDIO_MUTE_BTN = 24
+MUSIC_MUTE_BTN = 27
+AUDIO_MUTE_BTN = 5
 VIDEO_SWITCH_BTN = 26
-MUSIC_SWITCH_BTN = 16
+MUSIC_SWITCH_BTN = 17
 
 # buttons
 GPIO.setup(MUSIC_MUTE_BTN, GPIO.IN)
@@ -122,7 +120,7 @@ music_muted = False
 while True:
     vibration, addr = sock.recvfrom(1024)
     vibration = vibration.decode('utf-8')
-    
+
     if vibration == "1":
         curr_player.unmute()
         curr_music.mute()
