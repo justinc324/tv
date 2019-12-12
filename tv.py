@@ -140,6 +140,7 @@ while True:
         else:
             curr_player.mute()
             audio_muted = True
+        print("audio muted")
         wait(1)
 
     # mute music
