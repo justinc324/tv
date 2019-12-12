@@ -101,7 +101,7 @@ while True:
         music[MUSIC_ITER].pause()
         MUSIC_ITER = (MUSIC_ITER + 1) % MUSIC_COUNT
         music[MUSIC_ITER].play()
-        channel0.play(music[MUSIC_ITER], -1)
+        # channel0.play(music[MUSIC_ITER], -1)
         print("wow")
         switch = not(switch)
 
@@ -111,7 +111,7 @@ while True:
         AUDIO_ITER = (AUDIO_ITER + 1) % AUDIO_COUNT
         curr_player.mute()
         muted = True
-        mixer.Channel(1).play(audio[AUDIO_ITER])
+        # mixer.Channel(1).play(audio[AUDIO_ITER])
 
 
 # Create a VideoCapture object and read from input file
