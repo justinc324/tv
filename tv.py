@@ -92,6 +92,8 @@ videos = (video_agni_kai, video_fire_drill, video_kendall_succession)
 curr_player = video_agni_kai
 curr_player.play()
 
+curr_music = office_theme
+
 # current audio
 audio_muted = False
 music_muted = False
@@ -118,10 +120,10 @@ while True:
     # mute music
     if keyboard.is_pressed('n'):
         if music_muted:
-            curr_player.unmute()
+            curr_music.unmute()
             music_muted = False
         else:
-            curr_player.mute()
+            curr_music.mute()
             music_muted = True
 
     # play music
