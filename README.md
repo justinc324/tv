@@ -1,6 +1,6 @@
 # Create-A-Show
 
-Welcome! For my final project, I decided  [Check it out in action.](https://www.youtube.com/watch?v=6sI_j_qrEh0).
+For my final project, I decided to create a box that explores the concept of separating a seemingly seamless and cohesive piece of art  (television) into some of its different components (music, dialogue, visual). I’ve found you can create some really interesting and funny combinations! See below for how I created the Create-A-Show box, and [check it out in action!](https://www.youtube.com/watch?v=6sI_j_qrEh0).
 
 ![Create-A-Show](IMG_1913.jpeg) 
 
@@ -10,11 +10,12 @@ Welcome! For my final project, I decided  [Check it out in action.](https://www.
 - Raspberry Pi
 - Momentary push button (soldered) x4
 - ESP32
-- 3.7v LiPo Battery
+- 3.7v LiPo battery
 - Various ribbon cables
 - Keyboard
 - Mouse
 - Monitor w/ sound or speakers
+- Digital vibration sensor
 
 ### Hardware Setup
 
@@ -49,28 +50,39 @@ Here's a picture of the actual setup of both:
 
 #### Remote Wiring:
 
-#### LiPo Battery
-- GND: Connected to a GND on the ESP32
+##### LiPo Battery
+- GND: Connected to a GND port on the ESP32
+- VCC: Connected to the 5v port on the ESP32
 
-#### The Printer Itself
-In order to create the printer itself, see [the documentation on Brachio Graph](https://brachiograph.readthedocs.io/en/latest/)
+##### Vibration Sensor
+- GND: Connected to a GND port on the ESP32
+- VCC: Connected to the 3.3v port on the ESP32
+- DO: Connected to GPIO port 22 on the ESP32
+
 
 ### Software to Install 
 
-### Processing
-Download Processing [here](https://processing.org/)
+#### Arduino
+I used Arduino to load the arduino.ide program onto the ESP32.
 
-#### BrachioGraph
-Again, check out the [Brachio Graph documentation](https://brachiograph.readthedocs.io/en/latest/). You can also simply `pip install -r requirements.txt`, we have all the necessary requirements on there.  
+#### OMXPlayer Wrapper
+This is a Python package that allows you to control the native OMXPlayer on the Pi from Python commands. Simply `pip install omxplayer-wrapper`
 
-In order to re-create our work one would need: A Raspberry Pi 3 B+, four servo motors, three popsicle sticks, two binder clips (one small and one large), a breadboard, a switch, access to Python, and access to processing.
+#### Other dependencies
+There are a few imports in the Python scripts that are no longer necessary - in fact, you only need the `socket`, `time`, and `OMXPlayer`
+packages. You don’t need the rest.  
+
+#### Music/Audio clips
+For legal/copyright reasons, I did not load the music and video clips onto GitHub. You’ll have to grab those yourself, and change the corresponding paths in the code :)
 
 ### Running it
-1. Connect the Raspberry Pi to a monitor, keyboard, and mouse (or use a remote desktop like VNC Viewer).
-2. On a terminal, run `sudo pigpiod`, then navigate to the repo. Run `cd BrachioGraph` and then run `python3 controller.py`. This will set the printer up and make it ready to receive an image to print.
-2. Open the Processing sketch underneath `BrachioGraph/DrawSomethingKeys`
-3. Draw something! 
-4. Hit `s` to save the drawing.
-5. Hit the push button! 
-6. Now we wait - hitting the push button tells the Pi to convert the image you just saved into a JSON file. This can take anywhere from 1-3 minutes. After it's created, it takes another 2-7 minutes for the Servo Scribbler to complete the drawing.
-7. Enjoy!
+1. Connect the Raspberry Pi to a monitor, keyboard, and mouse 
+2. On a terminal, navigate to the repo, and activate a virtual environment if you installed the dependencies that way. 
+3. (skip this step if you’re not using the wireless remote) Connect the ESP32 to a LiPo battery and connect the Raspberry Pi to the ESP32_jcong WiFi network (password is “Christmas”)
+4. If you didn’t use the remote, run python3 tvnowifi.py - if you did, run python3 tv.py
+5. Disconnect the remote and keyboard
+6. Enjoy! Use the green button on the right to switch between music clips, and hit the red button on the right to mute/unmite the music. Use the green button on the left to switch between video clips, and hit the red button on the left to mute/unmute audio from the videos.
+
+![Create-A-Show](IMG_1912.jpeg) 
+![Create-A-Show](IMG_1940.jpeg) 
+![Create-A-Show](IMG_1941.jpeg) 
